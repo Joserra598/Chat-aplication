@@ -193,7 +193,7 @@ img {
 	min-height: 100vh;
 	width: 23vw;
 	background: rgba(205, 173, 255, 0.9);
-	/* transform: translateX(-100%); */
+	transform: translateX(-100%);
 	transition: transform ease 300ms, opacity 600ms ease;
 	z-index: 100;
 	overflow: hidden;
