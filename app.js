@@ -4,13 +4,13 @@ const overlay = document.querySelector(".overlay");
 const sidebarItems = [...document.querySelectorAll(".navbar__menu-item")];
 const navbarMenus = [...document.querySelector(".navbar").children];
 const backBtnContact = document.querySelector("#backContactMenu");
-// const navbar = document.querySelector(".navbar");
 
 const changeMenu = function () {
 	navbarMenus.forEach((item) => {
 		item.style.transform = `translateX(${this * -100}%)`;
 	});
 	navbar.style.overflowY = `${+this === 1 ? "auto" : "hidden"}`;
+	navbar.scrollTo(0, 0);
 };
 
 sidebarItems.forEach((item) => {
