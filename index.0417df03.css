@@ -193,14 +193,24 @@ img {
 	min-height: 100vh;
 	width: 23vw;
 	background: rgba(205, 173, 255, 0.9);
-	transform: translateX(-100%);
+	/* transform: translateX(-100%); */
 	transition: transform ease 300ms, opacity 600ms ease;
 	z-index: 100;
-
+	overflow: hidden;
+	display: flex;
 	/* opacity: 0; */
 }
 
-.navbar > * + * {
+.navbar > * {
+	min-width: 100%;
+	transition: 300ms ease transform;
+}
+
+.sidebar {
+	min-width: 100%;
+}
+
+.sidebar > * + * {
 	margin-top: 1rem;
 }
 
@@ -347,6 +357,75 @@ img {
 .menu-container:hover {
 	background: rgba(121, 121, 121, 0.4);
 	cursor: pointer;
+}
+
+.contacts-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+.contacts-menu__header {
+	display: flex;
+	/* outline: 1px solid red; */
+	min-height: 5vh;
+	align-items: center;
+	justify-content: flex-start;
+	font-family: Montserrat, sans-serif;
+	font-weight: 200;
+	gap: 2rem;
+	padding: 1em 1em;
+	background: #1c1672;
+	color: white;
+}
+
+.contacts-menu__header > svg {
+	--size-svg: 2.5rem;
+	height: var(--size-svg);
+	width: var(--size-svg);
+	transform: rotate(180deg);
+	fill: white;
+	transition: fill ease 300ms;
+}
+
+.contacts-menu__header > svg:hover {
+	fill: rgb(180, 180, 180);
+	cursor: pointer;
+}
+
+.contacts-menu__name {
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	text-align: center;
+	outline: 1px solid black;
+	background: #1c1672;
+	color: white;
+	padding: 0.7em;
+}
+
+.contacts-menu-all {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.contact {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 2rem;
+	font-family: Montserrat, sans-serif;
+	padding: 1em;
+	transition: background-color 500ms ease;
+}
+
+.contact:hover {
+	background: rgb(145, 121, 192);
+	cursor: pointer;
+}
+
+.contact > h2 {
+	font-size: 1.3rem;
+	font-weight: 400;
 }
 
 .previewMessage,
